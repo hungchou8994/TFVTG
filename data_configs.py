@@ -60,4 +60,22 @@ DATASETS={
             },
         }
     },
+    'nextgqa': {
+        'feature_path': 'dataset/nextgqa/blip2_features/',
+        'video_path': 'dataset/nextgqa/videos/',
+        'stride': 16,
+        'max_stride_factor': 0.5,
+        'splits': {
+            'val': {
+                'qa_file': 'dataset/nextgqa/val.csv',
+                'grounding_file': 'dataset/nextgqa/gsub_val.json',
+                'pad_sec': 0.0,
+            },
+            'test': {
+                'qa_file': 'dataset/nextgqa/test.csv',
+                'grounding_file': 'dataset/nextgqa/gsub_test.json',
+                'pad_sec': 0.0,
+            },
+        }
+    },
 }

@@ -1,0 +1,11 @@
+.env
+
+# NExT-GQA — large files not tracked
+dataset/nextgqa/videos/
+dataset/nextgqa/blip2_features/
+dataset/nextgqa/*.tar.gz
+dataset/nextgqa/*.tar
+
+# Python cache
+__pycache__/
+*.pyc

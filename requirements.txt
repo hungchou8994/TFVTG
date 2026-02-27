@@ -1,0 +1,17 @@
+# Core ML
+numpy
+torch
+torchvision
+salesforce-lavis
+decord
+
+# LLM / API clients
+google-genai            # new Gemini SDK (replaces google-generativeai)
+openai
+groq
+json5
+
+# Utilities
+tqdm
+python-dotenv
+scikit-learn

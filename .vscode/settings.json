@@ -1,0 +1,14 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "Get-Command": true,
+        "D:\\HCMUS\\KLTN\\TFVTG\\.venv\\bin\\python.exe": true,
+        "/^python -c \"from google import genai; print\\('google-genai OK, version:', genai\\.__version__\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python -c \"import csv; r=list\\(csv\\.reader\\(open\\('dataset/nextgqa/test\\.csv','r',encoding='utf-8'\\)\\)\\); print\\('Headers:', r\\[0\\]\\); print\\('Row 1:', r\\[1\\]\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
