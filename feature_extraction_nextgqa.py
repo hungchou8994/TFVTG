@@ -101,28 +101,37 @@ def find_video_path(vidor_root, vidor_rel):
     """
     Try to find video file given VidOR relative path.
     vidor_rel example: '1020/13496784364'
-    Tries: {vidor_root}/{folder}/{video_id}/{video_id}.ext
+
+    Tries in order:
+      1. {vidor_root}/{folder}/{video_id}.ext      ← flat (most common)
+      2. {vidor_root}/{folder}/{video_id}/{video_id}.ext  ← VidOR original nested
+      3. {vidor_root}/{video_id}.ext               ← fully flat fallback
     """
     folder, video_id = vidor_rel.split('/')
-    video_dir = os.path.join(vidor_root, folder, video_id)
 
-    if not os.path.isdir(video_dir):
-        # Some setups flatten: {vidor_root}/{video_id}.ext
-        for ext in VIDEO_EXTENSIONS:
-            flat_path = os.path.join(vidor_root, video_id + ext)
-            if os.path.isfile(flat_path):
-                return flat_path
-        return None
-
+    # 1. Flat inside folder: {folder}/{video_id}.ext  (most common setup)
     for ext in VIDEO_EXTENSIONS:
-        candidate = os.path.join(video_dir, video_id + ext)
+        candidate = os.path.join(vidor_root, folder, video_id + ext)
         if os.path.isfile(candidate):
             return candidate
 
-    # Fallback: any video file in the directory
-    for fname in os.listdir(video_dir):
-        if any(fname.endswith(ext) for ext in VIDEO_EXTENSIONS):
-            return os.path.join(video_dir, fname)
+    # 2. VidOR original nested: {folder}/{video_id}/{video_id}.ext
+    video_dir = os.path.join(vidor_root, folder, video_id)
+    if os.path.isdir(video_dir):
+        for ext in VIDEO_EXTENSIONS:
+            candidate = os.path.join(video_dir, video_id + ext)
+            if os.path.isfile(candidate):
+                return candidate
+        # Any video file in subdirectory
+        for fname in os.listdir(video_dir):
+            if any(fname.endswith(ext) for ext in VIDEO_EXTENSIONS):
+                return os.path.join(video_dir, fname)
+
+    # 3. Fully flat: {vidor_root}/{video_id}.ext
+    for ext in VIDEO_EXTENSIONS:
+        candidate = os.path.join(vidor_root, video_id + ext)
+        if os.path.isfile(candidate):
+            return candidate
 
     return None
 
