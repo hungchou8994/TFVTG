@@ -219,13 +219,35 @@ def main():
     pbar = tqdm(pending, desc='Extracting features')
     for vid, video_path, save_path in pbar:
         pbar.set_postfix({'vid': vid[:14]})
-        try:
-            feats = extract_features(model, vis_proc, video_path,
-                                     fps=args.fps, batch_size=args.batch_size)
-            np.save(save_path, feats)
-        except Exception as e:
-            tqdm.write(f'  [ERROR] {vid}: {e}')
-            failed.append({'video_id': vid, 'path': video_path, 'error': str(e)})
+
+        # Auto-retry with smaller batch_size on CUDA OOM
+        batch_size = args.batch_size
+        success = False
+        last_error = None
+        while batch_size >= 8:
+            try:
+                torch.cuda.empty_cache()
+                feats = extract_features(model, vis_proc, video_path,
+                                         fps=args.fps, batch_size=batch_size)
+                np.save(save_path, feats)
+                success = True
+                break
+            except RuntimeError as e:
+                if 'out of memory' in str(e).lower():
+                    tqdm.write(f'  [OOM] {vid}: batch_size={batch_size} → retry with {batch_size // 2}')
+                    torch.cuda.empty_cache()
+                    batch_size //= 2
+                    last_error = e
+                else:
+                    last_error = e
+                    break
+            except Exception as e:
+                last_error = e
+                break
+
+        if not success:
+            tqdm.write(f'  [ERROR] {vid}: {last_error}')
+            failed.append({'video_id': vid, 'path': video_path, 'error': str(last_error)})
 
     print(f'\n{"="*50}')
     print(f'Done!')
