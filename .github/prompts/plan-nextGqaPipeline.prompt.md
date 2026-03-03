@@ -36,7 +36,7 @@ Question ──→ [Gemini: Q→Query] ──→ [TFVTG Grounder] ──→ [Gem
                   │                       │                      │                       │
               Gemini API              BLIP-2                 Gemini API              Gemini API
              (text-only)      (frame-text similarity,     (multimodal:             (multimodal:
-                              sliding window + NMS)       frames+question)         frames+MCQ)
+                              sliding window + NMS)   c    frames+question)         frames+MCQ)
 ```
 
 - **Không cần training** — hoàn toàn dựa trên pre-trained models
