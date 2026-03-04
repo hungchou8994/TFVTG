@@ -5,7 +5,7 @@ dataset/nextgqa/videos/
 dataset/nextgqa/blip2_features/
 dataset/nextgqa/*.tar.gz
 dataset/nextgqa/*.tar
-
+dataset/nextgqa/.clips_tmp/
 # Python cache
 __pycache__/
 *.pyc

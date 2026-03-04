@@ -249,7 +249,9 @@ def build_contents_video(entry: dict, file_uri: str) -> list:
 
 # ── Response normalization ────────────────────────────────────────────────────
 
-def _try_parse_json(text: str) -> dict:
+def _try_parse_json(text) -> dict:
+    if not text:
+        return {}
     text = text.strip()
     try:
         return json.loads(text)
@@ -262,6 +264,14 @@ def _try_parse_json(text: str) -> dict:
         except Exception:
             pass
     return {}
+
+
+def _atomic_save(data: list, path: str) -> None:
+    """Write JSON atomically: dump to .tmp then rename over the target."""
+    tmp = path + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, path)
 
 
 def normalize_ranking(raw: dict, n: int = 5) -> Optional[dict]:
@@ -317,6 +327,9 @@ async def verify_one(async_client, semaphore, rate_limiter: 'RateLimiter',
                     ),
                 )
             raw = _try_parse_json(resp.text)
+            if not raw:
+                fr = getattr(resp.candidates[0], 'finish_reason', '?') if (resp.candidates) else 'NO_CANDIDATES'
+                raise ValueError(f'empty/None resp.text, finish_reason={fr}')
             normalized = normalize_ranking(raw, n)
             if normalized:
                 return normalized
@@ -326,6 +339,8 @@ async def verify_one(async_client, semaphore, rate_limiter: 'RateLimiter',
                 wait = min(60 * (attempt + 1), 300)
                 await asyncio.sleep(wait)
                 continue
+            print(f'  [verify] attempt={attempt} structured FAIL qid={entry.get("qid","?")}: {type(exc).__name__}: {exc}')
+
 
         # Fallback: raw JSON (no schema constraint)
         try:
@@ -340,6 +355,9 @@ async def verify_one(async_client, semaphore, rate_limiter: 'RateLimiter',
                     ),
                 )
             raw = _try_parse_json(resp.text)
+            if not raw:
+                fr = getattr(resp.candidates[0], 'finish_reason', '?') if (resp.candidates) else 'NO_CANDIDATES'
+                raise ValueError(f'empty/None resp.text, finish_reason={fr}')
             normalized = normalize_ranking(raw, n)
             if normalized:
                 return normalized
@@ -348,6 +366,7 @@ async def verify_one(async_client, semaphore, rate_limiter: 'RateLimiter',
                 wait = min(60 * (attempt + 1), 300)
                 await asyncio.sleep(wait)
                 continue
+            print(f'  [verify] attempt={attempt} fallback FAIL qid={entry.get("qid","?")}: {type(exc).__name__}: {exc}')
 
         if attempt < max_retry - 1:
             await asyncio.sleep(min(2 ** attempt, 10))
@@ -436,12 +455,10 @@ async def _run_async(tasks, results, sync_client, api_key, model_name,
             pbar.set_postfix({'ok': ok, 'fail': fail, 'skip': skip})
 
             if completed % save_every == 0:
-                with open(output_file, 'w', encoding='utf-8') as f:
-                    json.dump(results, f)
+                _atomic_save(results, output_file)
 
         # Save after each chunk
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(results, f)
+        _atomic_save(results, output_file)
 
     pbar.close()
     return ok, fail, skip
@@ -521,8 +538,7 @@ def main():
 
     if not tasks:
         print('Nothing to do.')
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(results, f, indent=2)
+        _atomic_save(results, output_path)
         return
 
     api_key = os.environ.get('GOOGLE_API_KEY')
@@ -558,8 +574,7 @@ def main():
     ))
 
     # Final save
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+    _atomic_save(results, output_path)
 
     # Persist upload cache
     save_upload_cache(upload_cache)
