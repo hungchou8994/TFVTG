@@ -197,11 +197,13 @@ def evaluate_qa(results, iou_thresh=0.5, iop_thresh=0.5):
 def main():
     parser = argparse.ArgumentParser(description='Evaluate NExT-GQA QA results')
     parser.add_argument('--split', default='test', choices=['val', 'test'])
-    parser.add_argument('--source', default='gemini', choices=['gemini', 'qwen'],
-                        help='Which answerer output to evaluate: '
-                             'gemini → answerer_outputs_{split}.json, '
-                             'qwen  → answerer_outputs_qwen_{split}.json')
-    parser.add_argument('--input', default=None, help='Explicit path to answerer outputs JSON '
+    parser.add_argument('--source', default='gemini',
+                        choices=['gemini', 'qwen', 'baseline'],
+                        help='Which output file to evaluate: '
+                             'gemini   → answerer_outputs_{split}.json (full pipeline), '
+                             'qwen     → answerer_outputs_qwen_{split}.json, '
+                             'baseline → gemini_baseline_outputs_{split}.json (ablation)')
+    parser.add_argument('--input', default=None, help='Explicit path to JSON '
                         '(overrides --source)')
     parser.add_argument('--iou-thresh', type=float, default=0.5,
                         help='IoU threshold for Acc@GQA (default: 0.5)')
@@ -213,6 +215,8 @@ def main():
         input_path = args.input
     elif args.source == 'qwen':
         input_path = f'dataset/nextgqa/answerer_outputs_qwen_{args.split}.json'
+    elif args.source == 'baseline':
+        input_path = f'dataset/nextgqa/gemini_baseline_outputs_{args.split}.json'
     else:
         input_path = f'dataset/nextgqa/answerer_outputs_{args.split}.json'
     print(f'Loading: {input_path}')

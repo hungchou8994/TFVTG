@@ -9,3 +9,18 @@ dataset/nextgqa/.clips_tmp/
 # Python cache
 __pycache__/
 *.pyc
+
+
+# Byte-compiled / optimized / DLL files
+*.egg-info
+*.py[cod]
+*$py.class
+
+# Temporary data
+/data*
+/demo/examples
+/model_zoo
+/work_dirs*
+.DS_Store
+._*
+.env
