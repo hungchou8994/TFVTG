@@ -63,7 +63,7 @@ DATASETS={
     'nextgqa': {
         'feature_path': 'dataset/nextgqa/blip2_features/',
         'video_path': 'dataset/nextgqa/videos/',
-        'stride': 16,
+        'stride': 4,
         'max_stride_factor': 0.5,
         'splits': {
             'val': {

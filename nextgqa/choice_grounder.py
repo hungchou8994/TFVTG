@@ -126,7 +126,7 @@ def ground_for_choice(video_feature, duration, query_text, stride, max_stride):
 
     # Fallback nếu không có proposal
     if len(proposals[0]) == 0:
-        return [0.0, duration, 0.0], 0.0, s_sem, s_sem, 0.0
+        return np.array([[0.0, duration, 0.0]]), 0.0, s_sem, s_sem, 0.0
 
     static_pred  = (proposals[0][:10] * duration).cpu().numpy()   # [N, 2]
     dynamic_pred = (pre_proposals[0][:10] * duration).cpu().numpy()  # [N]
@@ -142,23 +142,22 @@ def ground_for_choice(video_feature, duration, query_text, stride, max_stride):
     else:
         sharpness = 0.0
 
-    # Build best proposal via IoU-weighted re-rank (select_proposal)
+    # Build ALL proposals (dynamic_start, static_end, norm_conf)
     max_s = scores_raw.max()
     norm_scores = scores_raw / max_s if max_s > 0 else scores_raw
-    prop_array = np.array([
+    all_props = np.array([
         [float(dynamic_pred[i]), float(static_pred[i][1]), float(norm_scores[i])]
         for i in range(len(static_pred))
-    ])
-    ranked = select_proposal(prop_array)
-    bp = ranked[0].tolist()   # [start, end, norm_conf]
+    ])  # [N, 3]
 
-    # S_local: local semantic — mean cosine sim trong window của best proposal
-    start_f = max(0, int(bp[0] / duration * T))
-    end_f   = min(T, max(start_f + 1, int(bp[1] / duration * T)))
+    # S_local: use best (top-1) proposal window for local semantic
+    best_prop = all_props[0]  # already sorted by static score (desc)
+    start_f = max(0, int(best_prop[0] / duration * T))
+    end_f   = min(T, max(start_f + 1, int(best_prop[1] / duration * T)))
     s_local_raw = float(ori_scores[0, start_f:end_f].mean().cpu())
     s_local = (s_local_raw + 1.0) / 2.0
 
-    return bp, s_temp, s_sem, s_local, sharpness
+    return all_props, s_temp, s_sem, s_local, sharpness
 
 
 # ── Main runner ───────────────────────────────────────────────────────────────
@@ -243,19 +242,42 @@ def run_choice_grounder(split, feature_path, stride, max_stride_factor,
         for task in vtasks:
             try:
                 # ── Run BLIP-2 for each of 5 choice queries ──
-                best_per_choice = []   # [[start, end, norm_conf] × 5]
+                best_per_choice = []   # [[start, end, norm_conf] × 5] — top-1 per choice (debug)
+                all_pool = []          # all proposals from all 5 queries for global top-5
                 s_temps, s_sems, s_locals, sharpnesses = [], [], [], []
 
                 for q_text in task['queries']:
-                    bp, s_temp, s_sem, s_local, sharp = ground_for_choice(
+                    all_props, s_temp, s_sem, s_local, sharp = ground_for_choice(
                         video_feature, task['duration'],
                         q_text, stride, max_stride
                     )
-                    best_per_choice.append(bp)
+                    best_per_choice.append(all_props[0].tolist())  # top-1 per choice
+                    all_pool.extend(all_props.tolist())            # all proposals pooled
                     s_temps.append(s_temp)
                     s_sems.append(s_sem)
                     s_locals.append(s_local)
                     sharpnesses.append(sharp)
+
+                # ── Pool all proposals → global top-5 by conf (NMS already applied per-query) ──
+                all_pool_arr = np.array(all_pool)  # [N_total, 3]
+                # Sort by conf descending, deduplicate overlapping by simple IoU NMS
+                sorted_idx = np.argsort(-all_pool_arr[:, 2])
+                all_pool_arr = all_pool_arr[sorted_idx]
+                # Greedy NMS across pool
+                def pool_iou(a, b):
+                    inter = max(0, min(a[1], b[1]) - max(a[0], b[0]))
+                    union = max(a[1], b[1]) - min(a[0], b[0])
+                    return inter / union if union > 0 else 0.0
+                kept = []
+                for prop in all_pool_arr:
+                    if all(pool_iou(prop, k) < 0.5 for k in kept):
+                        kept.append(prop)
+                    if len(kept) == 5:
+                        break
+                # Pad if fewer than 5
+                while len(kept) < 5:
+                    kept.append(kept[-1] if kept else [0.0, task['duration'], 0.0])
+                top5_global = [p.tolist() for p in kept]
 
                 # ── Composite scoring ──────────────────────────────────────
                 # Normalize s_temp across 5 choices → [0,1] (min-max)
@@ -296,10 +318,10 @@ def run_choice_grounder(split, feature_path, stride, max_stride_factor,
                     'gt_segments':        task['gt_segments'],
                     'duration':           task['duration'],
                     # ── Fields cho verifier pipeline ──
-                    'top5_proposals':        best_per_choice,          # [[s,e,c] × 5] — verifier cần
+                    'top5_proposals':        top5_global,              # global top-5 pooled — verifier cần
                     'grounding_description': task['question'],
                     # ── Composite scoring debug ──
-                    'choice_proposals':      best_per_choice,
+                    'choice_proposals':      best_per_choice,          # top-1 per choice (debug)
                     'choice_s_temp':         t_norm.tolist(),           # normalized temporal
                     'choice_s_sem':          s_arr.tolist(),            # global semantic
                     'choice_s_local':        l_arr.tolist(),            # local semantic
