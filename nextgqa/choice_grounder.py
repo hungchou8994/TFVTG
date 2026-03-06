@@ -46,7 +46,7 @@ from collections import defaultdict
 from tqdm import tqdm
 
 from data_configs import DATASETS
-from vlm_localizer import generate_proposal
+from vlm_localizer import generate_proposal, calc_scores_per_query
 from llm_prompting import select_proposal
 
 
@@ -94,28 +94,16 @@ def load_5choice_csv(csv_path):
 
 # ── Core: ground one choice query ─────────────────────────────────────────────
 
-def ground_for_choice(video_feature, duration, query_text, stride, max_stride):
+def ground_for_choice(video_feature, duration, query_text, stride, max_stride,
+                      _precomputed_scores=None):
     """
     Chạy BLIP-2 generate_proposal() cho một choice query.
-    Returns (best_proposal, s_temp, s_sem, s_local, sharpness):
-
-        best_proposal : [start, end, norm_conf]  — segment tốt nhất
-        s_temp        : float  — mean top-3 static scores (foreground-background contrast)
-                        Đo "moment xảy ra KHU BIỆT" — evidence temporal tốt nhất
-        s_sem         : float ∈ [0,1]  — global semantic: cosine(mean_video, query)
-                        Đo "query có liên quan đến video nói chung"
-        s_local       : float ∈ [0,1]  — local semantic: cosine(mean_moment, query)
-                        Đo "query khớp với ĐOẠN CỤ THỂ hơn toàn video"
-        sharpness     : float  — (top1_score - top3_score) / max(top1_score, 1e-8)
-                        Cao → proposal nổi bật, signal grounding chắc chắn
-
-    Score cuối (tính ở main loop):
-        S_i = 0.6*s_temp_norm + 0.25*s_sem + 0.15*s_local
-        S_i *= (1 + 0.3 * sharpness)          # sharpness bonus
-        S_final = S_i - max(S_j for j != i)   # contrastive
+    _precomputed_scores: [1, T] tensor — nếu đã tính trước từ calc_scores_per_query (batched).
+    Returns (all_props, s_temp, s_sem, s_local, sharpness).
     """
     proposals, filt_scores, pre_proposals, ori_scores = generate_proposal(
-        video_feature, [query_text], stride, max_stride
+        video_feature, [query_text], stride, max_stride,
+        _precomputed_scores=_precomputed_scores
     )
 
     # ori_scores: [1, T] raw cosine sim mỗi frame window với query
@@ -241,15 +229,22 @@ def run_choice_grounder(split, feature_path, stride, max_stride_factor,
 
         for task in vtasks:
             try:
+                # ── Batch encode all 5 choice queries at once (1 GPU forward pass) ──
+                all_scores_batch = calc_scores_per_query(
+                    video_feature, task['queries']
+                )  # [5, T] — shared video features, batched text encoding
+
                 # ── Run BLIP-2 for each of 5 choice queries ──
                 best_per_choice = []   # [[start, end, norm_conf] × 5] — top-1 per choice (debug)
                 all_pool = []          # all proposals from all 5 queries for global top-5
                 s_temps, s_sems, s_locals, sharpnesses = [], [], [], []
 
-                for q_text in task['queries']:
+                for i, q_text in enumerate(task['queries']):
+                    scores_i = all_scores_batch[i:i+1]  # [1, T] for this query
                     all_props, s_temp, s_sem, s_local, sharp = ground_for_choice(
                         video_feature, task['duration'],
-                        q_text, stride, max_stride
+                        q_text, stride, max_stride,
+                        _precomputed_scores=scores_i
                     )
                     best_per_choice.append(all_props[0].tolist())  # top-1 per choice
                     all_pool.extend(all_props.tolist())            # all proposals pooled

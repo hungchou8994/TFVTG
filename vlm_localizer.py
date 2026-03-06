@@ -102,8 +102,24 @@ def calc_scores(video_features, sentences):
     return scores
 
 
-def generate_proposal(video_features, sentences, stride, max_stride, nms_thresh=0.3):
-    scores = calc_scores(video_features, sentences)
+def calc_scores_per_query(video_features, sentences):
+    """Compute per-query scores without averaging. Returns [M, T] tensor.
+    Use for batched multi-query grounding (e.g. 5 choice queries at once)."""
+    with torch.no_grad():
+        text = model.tokenizer(sentences, padding='max_length', truncation=True, max_length=35, return_tensors="pt").to('cuda')
+        text_output = model.Qformer.bert(text.input_ids, attention_mask=text.attention_mask, return_dict=True)
+        text_feat = model.text_proj(text_output.last_hidden_state[:,0,:])
+
+    v1 = F.normalize(text_feat, dim=-1)                                               # [M, 256]
+    v2 = F.normalize(torch.tensor(video_features, device='cuda', dtype=v1.dtype), dim=-1)  # [T, 32, 256]
+    scores = torch.einsum('md,npd->mnp', v1, v2)  # [M, T, 32]
+    scores, _ = scores.max(dim=-1)                 # [M, T]
+    return scores                                  # NOT averaged — one row per query
+
+
+def generate_proposal(video_features, sentences, stride, max_stride, nms_thresh=0.3,
+                      _precomputed_scores=None):
+    scores = _precomputed_scores if _precomputed_scores is not None else calc_scores(video_features, sentences)
     masks = (scores > 0.2).float()
     scores = scores * masks
     stride = min(stride, scores.size(-1)//2)
