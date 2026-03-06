@@ -227,12 +227,24 @@ def run_choice_grounder(split, feature_path, stride, max_stride_factor,
 
         max_stride = int(video_feature.shape[0] * max_stride_factor)
 
-        for task in vtasks:
+        # ── Batch encode ALL queries for ALL tasks on this video in 1 GPU call ──
+        # vtasks may have N questions × 5 queries = 5N queries total
+        all_queries_flat = [q for task in vtasks for q in task['queries']]  # [N*5]
+        try:
+            all_scores_flat = calc_scores_per_query(
+                video_feature, all_queries_flat
+            )  # [N*5, T]
+        except Exception as e:
+            tqdm.write(f'  [WARN] batch encode failed for {vid}, falling back: {e}')
+            all_scores_flat = None
+
+        for t_idx, task in enumerate(vtasks):
             try:
-                # ── Batch encode all 5 choice queries at once (1 GPU forward pass) ──
-                all_scores_batch = calc_scores_per_query(
-                    video_feature, task['queries']
-                )  # [5, T] — shared video features, batched text encoding
+                # Slice precomputed scores for this task [5, T]
+                if all_scores_flat is not None:
+                    all_scores_batch = all_scores_flat[t_idx*5:(t_idx+1)*5]
+                else:
+                    all_scores_batch = calc_scores_per_query(video_feature, task['queries'])
 
                 # ── Run BLIP-2 for each of 5 choice queries ──
                 best_per_choice = []   # [[start, end, norm_conf] × 5] — top-1 per choice (debug)
