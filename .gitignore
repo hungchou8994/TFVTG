@@ -17,7 +17,6 @@ __pycache__/
 *$py.class
 
 # Temporary data
-/data*
 /demo/examples
 /model_zoo
 /work_dirs*

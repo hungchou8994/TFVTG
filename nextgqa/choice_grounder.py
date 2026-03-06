@@ -7,9 +7,20 @@ test_rewrite_5_choices.csv (query_a … query_e).
 
 Cách hoạt động:
   1. Với mỗi câu hỏi, lấy 5 query đã viết lại theo từng choice.
-  2. Với mỗi query chạy localize() → collect proposals → select_proposal().
-  3. Best proposal của mỗi choice = props[0] (top-ranked sau re-rank).
-  4. Choice có confidence cao nhất → predicted_answer_idx + best_proposal.
+  2. Với mỗi query gọi generate_proposal() → tính 3 thành phần score:
+     - S_temp  = mean(top-3 static scores)  [foreground-background contrast]
+     - S_sem   = cosine(mean_video, query)  [global semantic alignment]
+     - S_local = cosine(mean_moment, query) [local moment semantic]
+  3. Composite score:
+     S_i = 0.6*S_temp_norm + 0.25*S_sem + 0.15*S_local
+     S_i *= (1 + 0.3 * sharpness)     [bonus choice grounding rõ nét]
+     S_final = S_i - max(S_j, j≠i)   [contrastive: tăng margin giữa choices]
+  4. argmax(S_final) → blip2_pred_idx (BLIP-2 standalone pred — ablation)
+
+LÝ DO không dùng localize():
+  localize() normalize scores / scores.max() → top proposal CỦA MỌI CHOICE đều = 1.0
+  → argmax luôn chọn choice 0, không có sự phân biệt.
+  ori_scores là cosine similarity thô, có thể so sánh trực tiếp giữa các choice.
 
 Input :  test_rewrite_5_choices.csv   (query_a..query_e per question)
          gsub_{split}.json            (duration + gt_segments)
@@ -35,7 +46,7 @@ from collections import defaultdict
 from tqdm import tqdm
 
 from data_configs import DATASETS
-from vlm_localizer import localize
+from vlm_localizer import generate_proposal
 from llm_prompting import select_proposal
 
 
@@ -85,24 +96,69 @@ def load_5choice_csv(csv_path):
 
 def ground_for_choice(video_feature, duration, query_text, stride, max_stride):
     """
-    Chạy BLIP-2 localize() cho một choice query.
-    Returns best proposal [start, end, conf] (as list).
+    Chạy BLIP-2 generate_proposal() cho một choice query.
+    Returns (best_proposal, s_temp, s_sem, s_local, sharpness):
+
+        best_proposal : [start, end, norm_conf]  — segment tốt nhất
+        s_temp        : float  — mean top-3 static scores (foreground-background contrast)
+                        Đo "moment xảy ra KHU BIỆT" — evidence temporal tốt nhất
+        s_sem         : float ∈ [0,1]  — global semantic: cosine(mean_video, query)
+                        Đo "query có liên quan đến video nói chung"
+        s_local       : float ∈ [0,1]  — local semantic: cosine(mean_moment, query)
+                        Đo "query khớp với ĐOẠN CỤ THỂ hơn toàn video"
+        sharpness     : float  — (top1_score - top3_score) / max(top1_score, 1e-8)
+                        Cao → proposal nổi bật, signal grounding chắc chắn
+
+    Score cuối (tính ở main loop):
+        S_i = 0.6*s_temp_norm + 0.25*s_sem + 0.15*s_local
+        S_i *= (1 + 0.3 * sharpness)          # sharpness bonus
+        S_final = S_i - max(S_j for j != i)   # contrastive
     """
-    query_json = [{'descriptions': [query_text]}]
-    answers = localize(video_feature, duration, query_json, stride, max_stride)
+    proposals, filt_scores, pre_proposals, ori_scores = generate_proposal(
+        video_feature, [query_text], stride, max_stride
+    )
 
-    proposals = []
-    for t in range(3):
-        proposals += [
-            [p['response'][t]['start'], p['response'][t]['end'], p['response'][t]['confidence']]
-            for p in answers if len(p['response']) > t
-        ]
+    # ori_scores: [1, T] raw cosine sim mỗi frame window với query
+    T = ori_scores.shape[-1]
 
-    if not proposals:
-        return [0.0, duration, 0.0]
+    # S_sem: global semantic — mean cosine sim toàn video (normalize [-1,1] → [0,1])
+    s_sem = float(((ori_scores.mean() + 1.0) / 2.0).cpu())
 
-    ranked = select_proposal(np.array(proposals))  # IoU-weighted re-rank
-    return ranked[0].tolist()                       # [start, end, conf]
+    # Fallback nếu không có proposal
+    if len(proposals[0]) == 0:
+        return [0.0, duration, 0.0], 0.0, s_sem, s_sem, 0.0
+
+    static_pred  = (proposals[0][:10] * duration).cpu().numpy()   # [N, 2]
+    dynamic_pred = (pre_proposals[0][:10] * duration).cpu().numpy()  # [N]
+    scores_raw   = filt_scores[0][:10].cpu().numpy()               # [N] static scores
+
+    # S_temp = mean of top-3 static scores (foreground-background contrast)
+    top3 = sorted(scores_raw, reverse=True)[:3]
+    s_temp = float(np.mean(top3))
+
+    # Sharpness = relative gap top1 vs top3 (clamped [0,1])
+    if len(top3) >= 3:
+        sharpness = float(np.clip((top3[0] - top3[-1]) / (abs(top3[0]) + 1e-8), 0.0, 1.0))
+    else:
+        sharpness = 0.0
+
+    # Build best proposal via IoU-weighted re-rank (select_proposal)
+    max_s = scores_raw.max()
+    norm_scores = scores_raw / max_s if max_s > 0 else scores_raw
+    prop_array = np.array([
+        [float(dynamic_pred[i]), float(static_pred[i][1]), float(norm_scores[i])]
+        for i in range(len(static_pred))
+    ])
+    ranked = select_proposal(prop_array)
+    bp = ranked[0].tolist()   # [start, end, norm_conf]
+
+    # S_local: local semantic — mean cosine sim trong window của best proposal
+    start_f = max(0, int(bp[0] / duration * T))
+    end_f   = min(T, max(start_f + 1, int(bp[1] / duration * T)))
+    s_local_raw = float(ori_scores[0, start_f:end_f].mean().cpu())
+    s_local = (s_local_raw + 1.0) / 2.0
+
+    return bp, s_temp, s_sem, s_local, sharpness
 
 
 # ── Main runner ───────────────────────────────────────────────────────────────
@@ -187,19 +243,47 @@ def run_choice_grounder(split, feature_path, stride, max_stride_factor,
         for task in vtasks:
             try:
                 # ── Run BLIP-2 for each of 5 choice queries ──
-                best_per_choice = []   # [[start, end, conf], ...]
+                best_per_choice = []   # [[start, end, norm_conf] × 5]
+                s_temps, s_sems, s_locals, sharpnesses = [], [], [], []
+
                 for q_text in task['queries']:
-                    bp = ground_for_choice(
+                    bp, s_temp, s_sem, s_local, sharp = ground_for_choice(
                         video_feature, task['duration'],
                         q_text, stride, max_stride
                     )
                     best_per_choice.append(bp)
+                    s_temps.append(s_temp)
+                    s_sems.append(s_sem)
+                    s_locals.append(s_local)
+                    sharpnesses.append(sharp)
 
-                # ── Pick winner: choice with highest confidence ──
-                confs = [bp[2] for bp in best_per_choice]
-                pred_idx    = int(np.argmax(confs))
-                pred_answer = task['choices'][pred_idx]
-                best_prop   = best_per_choice[pred_idx]
+                # ── Composite scoring ──────────────────────────────────────
+                # Normalize s_temp across 5 choices → [0,1] (min-max)
+                # (s_temp là static score chưa chuẩn hóa, cần scale)
+                t_arr = np.array(s_temps)
+                t_min, t_max = t_arr.min(), t_arr.max()
+                if t_max > t_min:
+                    t_norm = (t_arr - t_min) / (t_max - t_min)
+                else:
+                    t_norm = np.full(5, 0.5)
+
+                s_arr = np.array(s_sems)
+                l_arr = np.array(s_locals)
+                sh_arr = np.array(sharpnesses)
+
+                # S_i = 0.6*S_temp + 0.25*S_sem + 0.15*S_local
+                composite = 0.6 * t_norm + 0.25 * s_arr + 0.15 * l_arr
+
+                # Sharpness bonus: S_i *= (1 + 0.3 * sharpness)
+                composite = composite * (1.0 + 0.3 * sh_arr)
+
+                # Contrastive: S_i -= max(S_j for j != i)
+                contrastive = np.array([
+                    composite[i] - np.max(np.delete(composite, i))
+                    for i in range(5)
+                ])
+
+                blip2_pred_idx = int(np.argmax(contrastive))
 
                 results.append({
                     'video_id':           vid,
@@ -211,10 +295,18 @@ def run_choice_grounder(split, feature_path, stride, max_stride_factor,
                     'answer_idx':         task['answer_idx'],
                     'gt_segments':        task['gt_segments'],
                     'duration':           task['duration'],
-                    'predicted_answer':     pred_answer,
-                    'predicted_answer_idx': pred_idx,
-                    'best_proposal':        best_prop,       # [start, end, conf]
-                    'choice_proposals':     best_per_choice, # [[s,e,c] × 5]
+                    # ── Fields cho verifier pipeline ──
+                    'top5_proposals':        best_per_choice,          # [[s,e,c] × 5] — verifier cần
+                    'grounding_description': task['question'],
+                    # ── Composite scoring debug ──
+                    'choice_proposals':      best_per_choice,
+                    'choice_s_temp':         t_norm.tolist(),           # normalized temporal
+                    'choice_s_sem':          s_arr.tolist(),            # global semantic
+                    'choice_s_local':        l_arr.tolist(),            # local semantic
+                    'choice_sharpness':      sh_arr.tolist(),           # sharpness per choice
+                    'choice_composite':      composite.tolist(),        # trước contrastive
+                    'choice_contrastive':    contrastive.tolist(),      # score cuối
+                    'blip2_pred_idx':        blip2_pred_idx,            # BLIP-2 standalone pred
                 })
 
             except Exception as e:
