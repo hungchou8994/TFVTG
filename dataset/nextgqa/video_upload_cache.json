@@ -808,5 +808,800 @@
     "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/q4jeyv87h0mp",
     "file_name": "files/q4jeyv87h0mp",
     "uploaded_at": "2026-03-05T03:09:02.794360+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1019\\7251069966.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/v45lxghz27bt",
+    "file_name": "files/v45lxghz27bt",
+    "uploaded_at": "2026-03-06T04:35:34.079716+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1019\\4286880949.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/x0g7w26zglu0",
+    "file_name": "files/x0g7w26zglu0",
+    "uploaded_at": "2026-03-06T04:35:36.167871+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1107\\6306690515.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/gq7hetj0cjwa",
+    "file_name": "files/gq7hetj0cjwa",
+    "uploaded_at": "2026-03-06T04:35:38.375149+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0098\\2965378944.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/qqfesv4lvke8",
+    "file_name": "files/qqfesv4lvke8",
+    "uploaded_at": "2026-03-06T04:35:42.038872+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1104\\4140415444.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/nmya5mbrq6aw",
+    "file_name": "files/nmya5mbrq6aw",
+    "uploaded_at": "2026-03-06T04:35:49.319264+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0090\\2603758280.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/eialh0re2f98",
+    "file_name": "files/eialh0re2f98",
+    "uploaded_at": "2026-03-06T04:35:53.342151+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1001\\3932142423.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/tnbwai4c0p1u",
+    "file_name": "files/tnbwai4c0p1u",
+    "uploaded_at": "2026-03-06T06:36:34.259221+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0041\\9132487788.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/s1azeywt9ash",
+    "file_name": "files/s1azeywt9ash",
+    "uploaded_at": "2026-03-06T06:36:34.444507+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1203\\5481728773.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ghdqnaco679g",
+    "file_name": "files/ghdqnaco679g",
+    "uploaded_at": "2026-03-06T06:36:35.614967+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1014\\6996441724.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/x3i0p1cav6og",
+    "file_name": "files/x3i0p1cav6og",
+    "uploaded_at": "2026-03-06T06:36:38.988751+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1103\\6706220611.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ejubown3h1zi",
+    "file_name": "files/ejubown3h1zi",
+    "uploaded_at": "2026-03-06T06:36:41.325791+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1001\\8686938112.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/tejrab26tjoj",
+    "file_name": "files/tejrab26tjoj",
+    "uploaded_at": "2026-03-06T06:36:45.824164+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1155\\7477913592.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/79uz81mzbel0",
+    "file_name": "files/79uz81mzbel0",
+    "uploaded_at": "2026-03-06T06:37:24.625486+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1130\\8507883824.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/9kn02loqww9y",
+    "file_name": "files/9kn02loqww9y",
+    "uploaded_at": "2026-03-06T06:37:27.423417+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1105\\6068969659.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/vphrjtmt2ls0",
+    "file_name": "files/vphrjtmt2ls0",
+    "uploaded_at": "2026-03-06T06:37:34.234060+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1008\\7526364640.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/zod5wbfzy6x5",
+    "file_name": "files/zod5wbfzy6x5",
+    "uploaded_at": "2026-03-06T06:37:34.536032+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1026\\3384417792.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/in9lzfzv1ow6",
+    "file_name": "files/in9lzfzv1ow6",
+    "uploaded_at": "2026-03-06T06:37:40.219756+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1006\\4754644196.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/nhg3x4vg91ry",
+    "file_name": "files/nhg3x4vg91ry",
+    "uploaded_at": "2026-03-06T06:37:49.727491+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1005\\10467727335.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/r4qj26yvllxe",
+    "file_name": "files/r4qj26yvllxe",
+    "uploaded_at": "2026-03-06T06:37:52.496286+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1103\\5602364659.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/yqsjwdiz0yb7",
+    "file_name": "files/yqsjwdiz0yb7",
+    "uploaded_at": "2026-03-06T06:37:54.212406+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1009\\3516935615.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/bgp391tv1msx",
+    "file_name": "files/bgp391tv1msx",
+    "uploaded_at": "2026-03-06T06:37:56.925575+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1000\\4511691550.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ermbncs91yhw",
+    "file_name": "files/ermbncs91yhw",
+    "uploaded_at": "2026-03-06T06:37:59.652531+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0014\\2982867777.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/t7fan9qtirje",
+    "file_name": "files/t7fan9qtirje",
+    "uploaded_at": "2026-03-06T06:38:09.344342+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1013\\3739867574.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/oqc4kwnsdpij",
+    "file_name": "files/oqc4kwnsdpij",
+    "uploaded_at": "2026-03-06T06:38:09.474969+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1122\\10305881544.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/bqsd46qe8vsr",
+    "file_name": "files/bqsd46qe8vsr",
+    "uploaded_at": "2026-03-06T06:38:09.767993+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1017\\5410541521.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/det4hemrwlpo",
+    "file_name": "files/det4hemrwlpo",
+    "uploaded_at": "2026-03-06T06:38:16.927525+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1165\\5344242564.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/qcpt0hmhn8ju",
+    "file_name": "files/qcpt0hmhn8ju",
+    "uploaded_at": "2026-03-06T06:38:18.309092+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1010\\8617869131.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/liwq2jtbkchq",
+    "file_name": "files/liwq2jtbkchq",
+    "uploaded_at": "2026-03-06T06:38:19.162413+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0080\\5579224246.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/yri0zwy9se8j",
+    "file_name": "files/yri0zwy9se8j",
+    "uploaded_at": "2026-03-06T06:38:23.786493+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1005\\4405746537.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/g82hwc0pwvih",
+    "file_name": "files/g82hwc0pwvih",
+    "uploaded_at": "2026-03-06T06:38:26.131405+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1019\\2411633466.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/5k8y7o6ic5qm",
+    "file_name": "files/5k8y7o6ic5qm",
+    "uploaded_at": "2026-03-06T06:38:30.191126+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1164\\4979527132.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/uwpsftiu17fy",
+    "file_name": "files/uwpsftiu17fy",
+    "uploaded_at": "2026-03-06T06:38:32.288888+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1100\\2637691975.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/db43h8rzwxax",
+    "file_name": "files/db43h8rzwxax",
+    "uploaded_at": "2026-03-06T06:38:38.970766+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0101\\3122394310.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/9gjfg2nwawi5",
+    "file_name": "files/9gjfg2nwawi5",
+    "uploaded_at": "2026-03-06T06:38:41.359709+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1160\\2836465095.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/mv4oqhqpp6je",
+    "file_name": "files/mv4oqhqpp6je",
+    "uploaded_at": "2026-03-06T06:38:44.571577+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1015\\5161932294.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/62f6efzko2qt",
+    "file_name": "files/62f6efzko2qt",
+    "uploaded_at": "2026-03-06T06:38:46.319106+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1008\\4220559457.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/8kuj4cm088qv",
+    "file_name": "files/8kuj4cm088qv",
+    "uploaded_at": "2026-03-06T06:39:03.034261+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1002\\5728022703.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/2jtn8wpsgrs0",
+    "file_name": "files/2jtn8wpsgrs0",
+    "uploaded_at": "2026-03-06T06:39:03.995962+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1027\\4127483344.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/q2g6duo0t7kk",
+    "file_name": "files/q2g6duo0t7kk",
+    "uploaded_at": "2026-03-06T06:39:37.755120+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1014\\8132052550.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/eg8qzgkh8a00",
+    "file_name": "files/eg8qzgkh8a00",
+    "uploaded_at": "2026-03-06T06:39:38.277358+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0023\\3336623732.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ti7gnhiv820m",
+    "file_name": "files/ti7gnhiv820m",
+    "uploaded_at": "2026-03-06T06:39:38.903842+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1013\\3765087719.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/iieuyb44p97i",
+    "file_name": "files/iieuyb44p97i",
+    "uploaded_at": "2026-03-06T06:39:42.531195+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0090\\5550305641.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/d8apvnrjlrkx",
+    "file_name": "files/d8apvnrjlrkx",
+    "uploaded_at": "2026-03-06T06:39:44.176836+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1150\\6516498145.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/iwovp9ra6ygm",
+    "file_name": "files/iwovp9ra6ygm",
+    "uploaded_at": "2026-03-06T06:39:54.106787+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1107\\8501394817.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/koy2dlg4hmzv",
+    "file_name": "files/koy2dlg4hmzv",
+    "uploaded_at": "2026-03-06T06:39:54.399502+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1203\\4665788205.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/9cvpbgb0u3ke",
+    "file_name": "files/9cvpbgb0u3ke",
+    "uploaded_at": "2026-03-06T06:39:56.949095+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1105\\6128079946.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/dhdvl5t3bguh",
+    "file_name": "files/dhdvl5t3bguh",
+    "uploaded_at": "2026-03-06T06:40:01.587851+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0002\\6862984319.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/7fuvcz9w6ta0",
+    "file_name": "files/7fuvcz9w6ta0",
+    "uploaded_at": "2026-03-06T06:40:23.069411+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1101\\3812429626.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/1govpkw0q2hu",
+    "file_name": "files/1govpkw0q2hu",
+    "uploaded_at": "2026-03-06T06:40:25.074667+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1122\\3020343223.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/oh73zko0yr52",
+    "file_name": "files/oh73zko0yr52",
+    "uploaded_at": "2026-03-06T06:40:26.240220+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1100\\2597214137.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/vj6ee0tgt1ur",
+    "file_name": "files/vj6ee0tgt1ur",
+    "uploaded_at": "2026-03-06T06:40:28.490870+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1165\\4081746317.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/7vf5zfit8hum",
+    "file_name": "files/7vf5zfit8hum",
+    "uploaded_at": "2026-03-06T06:40:37.215226+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1014\\4945866176.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ozg1yif5l6ww",
+    "file_name": "files/ozg1yif5l6ww",
+    "uploaded_at": "2026-03-06T06:40:41.090594+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1021\\4784858772.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/15ox1acd5krj",
+    "file_name": "files/15ox1acd5krj",
+    "uploaded_at": "2026-03-06T06:40:53.537115+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1023\\2662773013.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/atyal0jzx0pz",
+    "file_name": "files/atyal0jzx0pz",
+    "uploaded_at": "2026-03-06T06:41:24.287655+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1120\\3210170020.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/l8tw6puq04xy",
+    "file_name": "files/l8tw6puq04xy",
+    "uploaded_at": "2026-03-06T06:41:28.169880+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1123\\5475182274.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/a4db74mwpqqk",
+    "file_name": "files/a4db74mwpqqk",
+    "uploaded_at": "2026-03-06T06:41:30.309379+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1052\\5353486947.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/2nefy8yixyok",
+    "file_name": "files/2nefy8yixyok",
+    "uploaded_at": "2026-03-06T06:41:32.151254+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1021\\6091663460.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/g2e3cnumzs7w",
+    "file_name": "files/g2e3cnumzs7w",
+    "uploaded_at": "2026-03-06T06:41:45.820712+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1016\\10483027904.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/0hqje6ealbr3",
+    "file_name": "files/0hqje6ealbr3",
+    "uploaded_at": "2026-03-06T06:42:07.304744+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1201\\3360428599.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ods85v9q36rt",
+    "file_name": "files/ods85v9q36rt",
+    "uploaded_at": "2026-03-06T06:42:12.935475+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1130\\5362528947.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/4sgy57k6xjya",
+    "file_name": "files/4sgy57k6xjya",
+    "uploaded_at": "2026-03-06T06:42:13.439191+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1006\\4289404873.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/m8oc1pahhg58",
+    "file_name": "files/m8oc1pahhg58",
+    "uploaded_at": "2026-03-06T06:42:24.115976+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1020\\10864382765.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/absa0lymm4dx",
+    "file_name": "files/absa0lymm4dx",
+    "uploaded_at": "2026-03-06T06:42:24.115976+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1018\\2406887888.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/aijgcs95glal",
+    "file_name": "files/aijgcs95glal",
+    "uploaded_at": "2026-03-06T06:42:26.702300+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0052\\2430157408.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/lnb38ggbplmr",
+    "file_name": "files/lnb38ggbplmr",
+    "uploaded_at": "2026-03-06T06:42:39.494364+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1202\\8993709862.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/9g4etjunzcrl",
+    "file_name": "files/9g4etjunzcrl",
+    "uploaded_at": "2026-03-06T06:42:56.049578+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0053\\5131508387.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/zyv1buihat34",
+    "file_name": "files/zyv1buihat34",
+    "uploaded_at": "2026-03-06T06:43:08.663640+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0072\\4080877621.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/k93iu64dtea2",
+    "file_name": "files/k93iu64dtea2",
+    "uploaded_at": "2026-03-06T06:43:09.985118+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1005\\5028143031.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/6n1305m6x4id",
+    "file_name": "files/6n1305m6x4id",
+    "uploaded_at": "2026-03-06T06:43:21.095783+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1009\\2828927371.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/6dylsa4kquwe",
+    "file_name": "files/6dylsa4kquwe",
+    "uploaded_at": "2026-03-06T06:43:23.397671+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1201\\3598384046.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/lafpbkt249yk",
+    "file_name": "files/lafpbkt249yk",
+    "uploaded_at": "2026-03-06T06:43:27.871032+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0064\\2927365215.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/tgpw68s4y2zp",
+    "file_name": "files/tgpw68s4y2zp",
+    "uploaded_at": "2026-03-06T06:43:29.031656+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1025\\3623844354.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/lhdphoewjqhb",
+    "file_name": "files/lhdphoewjqhb",
+    "uploaded_at": "2026-03-06T06:43:34.850521+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0052\\5412696114.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ga2xw7h68l5b",
+    "file_name": "files/ga2xw7h68l5b",
+    "uploaded_at": "2026-03-06T06:43:37.620600+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1024\\7303386938.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/t6uq23bxyxyr",
+    "file_name": "files/t6uq23bxyxyr",
+    "uploaded_at": "2026-03-06T06:43:41.257659+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1009\\4657161080.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/exnx82hig0q6",
+    "file_name": "files/exnx82hig0q6",
+    "uploaded_at": "2026-03-06T06:43:46.111556+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0076\\3064389881.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/vi5qk0ya4wgo",
+    "file_name": "files/vi5qk0ya4wgo",
+    "uploaded_at": "2026-03-06T06:43:46.605596+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0075\\6764465247.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/sa0t671yh6oj",
+    "file_name": "files/sa0t671yh6oj",
+    "uploaded_at": "2026-03-06T06:43:47.158262+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1203\\3579030253.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/gxl5pl5k3fv7",
+    "file_name": "files/gxl5pl5k3fv7",
+    "uploaded_at": "2026-03-06T06:43:58.951817+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1015\\11794880314.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/j96gampbep32",
+    "file_name": "files/j96gampbep32",
+    "uploaded_at": "2026-03-06T06:43:59.615044+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0085\\2774457371.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/fsa4s3cvjl3c",
+    "file_name": "files/fsa4s3cvjl3c",
+    "uploaded_at": "2026-03-06T06:44:03.468973+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0017\\6004462245.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/pxxzz63ccg0r",
+    "file_name": "files/pxxzz63ccg0r",
+    "uploaded_at": "2026-03-06T06:44:04.223017+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1164\\6653111897.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/vydzqvknkleg",
+    "file_name": "files/vydzqvknkleg",
+    "uploaded_at": "2026-03-06T06:44:06.755503+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1025\\4242382178.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/lsqzmh2fe5o1",
+    "file_name": "files/lsqzmh2fe5o1",
+    "uploaded_at": "2026-03-06T06:44:09.007846+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1014\\4389226223.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/7m67wipeldua",
+    "file_name": "files/7m67wipeldua",
+    "uploaded_at": "2026-03-06T06:44:09.269252+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1099\\2786223802.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/4z12z9kb7ldm",
+    "file_name": "files/4z12z9kb7ldm",
+    "uploaded_at": "2026-03-06T06:44:10.353158+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1018\\3594312388.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/34tr7a79n7pi",
+    "file_name": "files/34tr7a79n7pi",
+    "uploaded_at": "2026-03-06T06:44:13.502643+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1016\\3093095651.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/7w5qv5hqt4hs",
+    "file_name": "files/7w5qv5hqt4hs",
+    "uploaded_at": "2026-03-06T06:44:15.773932+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1100\\3599210242.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/awgebupuj175",
+    "file_name": "files/awgebupuj175",
+    "uploaded_at": "2026-03-06T06:44:15.828639+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0002\\5183812946.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/gnp6qsr5k9y9",
+    "file_name": "files/gnp6qsr5k9y9",
+    "uploaded_at": "2026-03-06T06:44:17.569429+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1014\\7344039494.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/u4ok0848kva3",
+    "file_name": "files/u4ok0848kva3",
+    "uploaded_at": "2026-03-06T06:44:20.884700+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1000\\3659989604.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/0wkyg6j0pbr1",
+    "file_name": "files/0wkyg6j0pbr1",
+    "uploaded_at": "2026-03-06T06:44:22.966579+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0034\\4740345442.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/y05fphypx1lh",
+    "file_name": "files/y05fphypx1lh",
+    "uploaded_at": "2026-03-06T06:44:23.715836+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1150\\10149430394.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/gfqhnfgqbt4f",
+    "file_name": "files/gfqhnfgqbt4f",
+    "uploaded_at": "2026-03-06T06:44:27.298699+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1014\\3608098943.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/vg96psailk76",
+    "file_name": "files/vg96psailk76",
+    "uploaded_at": "2026-03-06T06:44:28.589248+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1164\\9214485291.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ebjyo2i05jrr",
+    "file_name": "files/ebjyo2i05jrr",
+    "uploaded_at": "2026-03-06T06:44:30.611157+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1026\\4430422083.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/7vluea1uufev",
+    "file_name": "files/7vluea1uufev",
+    "uploaded_at": "2026-03-06T06:44:31.307155+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1009\\10128261054.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/w0pxz1lq45e9",
+    "file_name": "files/w0pxz1lq45e9",
+    "uploaded_at": "2026-03-06T06:44:33.979649+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1018\\12427023395.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/4b301zylmsby",
+    "file_name": "files/4b301zylmsby",
+    "uploaded_at": "2026-03-06T06:44:36.640658+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1120\\8283116453.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/6vsbfxoud9ru",
+    "file_name": "files/6vsbfxoud9ru",
+    "uploaded_at": "2026-03-06T06:44:38.682220+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1120\\13887487955.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/szwfmdj2mzsv",
+    "file_name": "files/szwfmdj2mzsv",
+    "uploaded_at": "2026-03-06T06:44:45.984336+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1023\\3546634491.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ibio6lzlfs6x",
+    "file_name": "files/ibio6lzlfs6x",
+    "uploaded_at": "2026-03-06T06:44:49.554084+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1102\\2493035685.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ivmgeo4umrb5",
+    "file_name": "files/ivmgeo4umrb5",
+    "uploaded_at": "2026-03-06T06:44:51.073080+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1203\\9737743904.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/l5l0ng1qvmyp",
+    "file_name": "files/l5l0ng1qvmyp",
+    "uploaded_at": "2026-03-06T06:44:55.464552+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1000\\6802770639.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/medeudq5uyg0",
+    "file_name": "files/medeudq5uyg0",
+    "uploaded_at": "2026-03-06T06:44:59.394631+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1201\\3381602382.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/cejhldt8kpri",
+    "file_name": "files/cejhldt8kpri",
+    "uploaded_at": "2026-03-06T06:45:04.967477+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1100\\6620044377.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/xb9t5605iay3",
+    "file_name": "files/xb9t5605iay3",
+    "uploaded_at": "2026-03-06T06:45:05.345631+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1007\\5544695007.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/p2369x41ljwi",
+    "file_name": "files/p2369x41ljwi",
+    "uploaded_at": "2026-03-06T06:45:05.392139+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1026\\2458544634.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/8vcvlcxzyb8y",
+    "file_name": "files/8vcvlcxzyb8y",
+    "uploaded_at": "2026-03-06T06:45:08.373035+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1120\\4135845237.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/h100tgri6nxd",
+    "file_name": "files/h100tgri6nxd",
+    "uploaded_at": "2026-03-06T06:45:14.138472+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1026\\4123808525.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/81wg0u09wbqt",
+    "file_name": "files/81wg0u09wbqt",
+    "uploaded_at": "2026-03-06T06:45:19.853168+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1019\\3360208610.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/81p0e2d592qd",
+    "file_name": "files/81p0e2d592qd",
+    "uploaded_at": "2026-03-06T06:45:20.937588+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1000\\2757193865.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/8u4h9oo84n5y",
+    "file_name": "files/8u4h9oo84n5y",
+    "uploaded_at": "2026-03-06T06:45:21.683691+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1110\\4177758139.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/akbkhr0mpdbx",
+    "file_name": "files/akbkhr0mpdbx",
+    "uploaded_at": "2026-03-06T06:45:22.135511+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1203\\3804458046.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/9fdktbhbycyl",
+    "file_name": "files/9fdktbhbycyl",
+    "uploaded_at": "2026-03-06T06:45:25.026505+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1023\\3089060111.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/8ikg5kdhqmxh",
+    "file_name": "files/8ikg5kdhqmxh",
+    "uploaded_at": "2026-03-06T06:45:29.673267+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1014\\13125896183.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/xx9zm96ddciy",
+    "file_name": "files/xx9zm96ddciy",
+    "uploaded_at": "2026-03-06T06:45:34.942070+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1025\\3317240291.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/zdyimolkl2fh",
+    "file_name": "files/zdyimolkl2fh",
+    "uploaded_at": "2026-03-06T06:45:36.635377+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1011\\11400037054.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/q5m4t288t639",
+    "file_name": "files/q5m4t288t639",
+    "uploaded_at": "2026-03-06T06:45:39.137564+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1014\\9072405003.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/nkdv6vn7a6ki",
+    "file_name": "files/nkdv6vn7a6ki",
+    "uploaded_at": "2026-03-06T06:45:43.775826+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1130\\5929534589.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/gawcg2g7kfq2",
+    "file_name": "files/gawcg2g7kfq2",
+    "uploaded_at": "2026-03-06T06:45:45.590102+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1002\\8614954803.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/31ogifg5wdot",
+    "file_name": "files/31ogifg5wdot",
+    "uploaded_at": "2026-03-06T06:45:47.083939+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1106\\6310337188.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/kkvnho0l1aqy",
+    "file_name": "files/kkvnho0l1aqy",
+    "uploaded_at": "2026-03-06T06:45:47.834499+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0100\\4885355005.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/st0gtgf5y60s",
+    "file_name": "files/st0gtgf5y60s",
+    "uploaded_at": "2026-03-06T06:45:51.525535+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1106\\9023339404.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/s6qdipfgbrv7",
+    "file_name": "files/s6qdipfgbrv7",
+    "uploaded_at": "2026-03-06T06:45:51.952731+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1000\\6781937922.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/jy2ynvpo0tuu",
+    "file_name": "files/jy2ynvpo0tuu",
+    "uploaded_at": "2026-03-06T06:45:56.220957+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1012\\6875806550.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/e10dj5s5o3u1",
+    "file_name": "files/e10dj5s5o3u1",
+    "uploaded_at": "2026-03-06T06:45:58.788807+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1006\\7011018565.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/9okyv6gpslpy",
+    "file_name": "files/9okyv6gpslpy",
+    "uploaded_at": "2026-03-06T06:45:59.212985+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1021\\4536434821.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/byo6u3xn5win",
+    "file_name": "files/byo6u3xn5win",
+    "uploaded_at": "2026-03-06T06:46:01.056070+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1123\\7712814656.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/a4fzrc8eev0z",
+    "file_name": "files/a4fzrc8eev0z",
+    "uploaded_at": "2026-03-06T06:46:02.466257+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1105\\3751613141.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/s0n6v74l3xha",
+    "file_name": "files/s0n6v74l3xha",
+    "uploaded_at": "2026-03-06T06:46:03.003762+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0016\\3079724515.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/0cnzjz83azvn",
+    "file_name": "files/0cnzjz83azvn",
+    "uploaded_at": "2026-03-06T06:46:07.534716+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1007\\3628972520.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ss46vgmf6zg7",
+    "file_name": "files/ss46vgmf6zg7",
+    "uploaded_at": "2026-03-06T06:46:07.626370+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1017\\2818950014.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ywxfamtblkef",
+    "file_name": "files/ywxfamtblkef",
+    "uploaded_at": "2026-03-06T06:46:09.238525+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1162\\6660008425.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/hh21qayv5ojd",
+    "file_name": "files/hh21qayv5ojd",
+    "uploaded_at": "2026-03-06T06:46:10.263160+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0074\\5139599690.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/8bblrqvvpix3",
+    "file_name": "files/8bblrqvvpix3",
+    "uploaded_at": "2026-03-06T06:46:15.319283+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1019\\4771022581.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/5wckoo8cl5vb",
+    "file_name": "files/5wckoo8cl5vb",
+    "uploaded_at": "2026-03-06T06:46:15.965053+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1028\\3747923836.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/inlxyx7rezh9",
+    "file_name": "files/inlxyx7rezh9",
+    "uploaded_at": "2026-03-06T06:46:18.574674+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1105\\2623764605.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/opt2tglywva0",
+    "file_name": "files/opt2tglywva0",
+    "uploaded_at": "2026-03-06T06:46:18.863353+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1099\\6382059603.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/70lah5ak018e",
+    "file_name": "files/70lah5ak018e",
+    "uploaded_at": "2026-03-06T06:46:21.818035+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1150\\2876825076.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/cq7jtdn5ttyi",
+    "file_name": "files/cq7jtdn5ttyi",
+    "uploaded_at": "2026-03-06T06:46:25.827349+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1161\\4811179274.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/w5z78q5inbf4",
+    "file_name": "files/w5z78q5inbf4",
+    "uploaded_at": "2026-03-06T06:46:27.624438+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1202\\6292691001.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/7i5czklfaf3f",
+    "file_name": "files/7i5czklfaf3f",
+    "uploaded_at": "2026-03-06T06:46:33.613848+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1002\\5969368435.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/3gbmuh614wxe",
+    "file_name": "files/3gbmuh614wxe",
+    "uploaded_at": "2026-03-06T06:46:34.614876+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1006\\3702630327.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/588f1jnhds00",
+    "file_name": "files/588f1jnhds00",
+    "uploaded_at": "2026-03-06T06:46:35.419477+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1122\\8857007026.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/svlx00zdqclw",
+    "file_name": "files/svlx00zdqclw",
+    "uploaded_at": "2026-03-06T06:46:35.419477+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1002\\4688206546.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/phggjzqznnzr",
+    "file_name": "files/phggjzqznnzr",
+    "uploaded_at": "2026-03-06T06:46:41.257922+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1015\\6699885319.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/5j45xgsgkye1",
+    "file_name": "files/5j45xgsgkye1",
+    "uploaded_at": "2026-03-06T06:46:41.381853+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1017\\8109777832.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/uuf07aumxrbw",
+    "file_name": "files/uuf07aumxrbw",
+    "uploaded_at": "2026-03-06T06:46:45.623361+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1202\\8469860079.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/c86hbjq8rbeb",
+    "file_name": "files/c86hbjq8rbeb",
+    "uploaded_at": "2026-03-06T06:46:49.317522+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1008\\13482206704.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/ch3q3dz9k7ot",
+    "file_name": "files/ch3q3dz9k7ot",
+    "uploaded_at": "2026-03-06T06:46:50.515959+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1104\\7149839527.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/8xgn31v4b1p7",
+    "file_name": "files/8xgn31v4b1p7",
+    "uploaded_at": "2026-03-06T06:46:50.515959+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\0033\\2502947328.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/1rl551pyauxe",
+    "file_name": "files/1rl551pyauxe",
+    "uploaded_at": "2026-03-06T06:46:51.160370+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1000\\7530953680.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/hv08o1605cd8",
+    "file_name": "files/hv08o1605cd8",
+    "uploaded_at": "2026-03-06T06:46:55.776924+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1000\\4607629530.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/un8cnj7gd6b4",
+    "file_name": "files/un8cnj7gd6b4",
+    "uploaded_at": "2026-03-06T06:47:00.056924+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1162\\5772591393.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/lru9408s4emr",
+    "file_name": "files/lru9408s4emr",
+    "uploaded_at": "2026-03-06T06:47:00.710655+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1123\\8105743251.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/g934fska697g",
+    "file_name": "files/g934fska697g",
+    "uploaded_at": "2026-03-06T06:47:03.104051+00:00"
+  },
+  "D:\\HCMUS\\KLTN\\TFVTG\\dataset\\nextgqa\\videos\\1000\\4444103383.mp4": {
+    "file_uri": "https://generativelanguage.googleapis.com/v1beta/files/va97v431lqco",
+    "file_name": "files/va97v431lqco",
+    "uploaded_at": "2026-03-06T06:47:05.777931+00:00"
   }
 }
